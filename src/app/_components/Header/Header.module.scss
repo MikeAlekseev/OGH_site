@@ -1,0 +1,18 @@
+header {
+  .a{
+    text-decoration: none;
+  }
+  .logo{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    .logo_img {
+      width: 350px;
+      height: auto;
+    }
+    .logo_txt{
+      font-size: 50px;
+    }
+  }
+
+}

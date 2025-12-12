@@ -3,14 +3,20 @@ import Link from 'next/link'
 
 import { Menu } from '../Menu'
 
-import styles from './Header.module.css'
+import styles from './Header.module.scss'
 
 export function Header() {
     return (
         <header className={styles.module}>
-            <p className="logo"><Link href="/">
-                <img className="logo" src='logo.png' alt="logo" />
-                Объединенное городское хозяйство</Link></p>
+            <div >
+                <Link className={styles.logo} href="/">
+                <div>
+                    <img className={styles.logo_img} src='logo.png' alt="logo" />
+                </div>
+                    <div className={styles.logo_txt}>Объединенное городское хозяйство</div>
+
+                </Link>
+            </div>
             <Menu />
         </header>
     )
