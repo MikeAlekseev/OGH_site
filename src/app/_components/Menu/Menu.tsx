@@ -1,11 +1,13 @@
 import Link from 'next/link'
 
+import styles from './Menu.module.scss'
+
 export function Menu() {
     return (
-        <div>
+        <div className={styles.menu}>
             Menu
 
-            <ul>
+            <ul className={styles.menu_list}>
                 <li><Link href="/news">Новости</Link></li>
                 <li><Link href="/improvement">Благоустройство</Link></li>
                 <li><Link href="/highway">Дороги</Link></li>
