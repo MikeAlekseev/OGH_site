@@ -11,7 +11,7 @@ export function Header() {
             <div >
                 <Link className={styles.logo} href="/">
                 <div>
-                    <img className={styles.logo_img} src='/logo.png' alt="logo" />
+                    <img className={styles.logo_img} src="/logo.png" alt="logo" />
                 </div>
                     <div className={styles.logo_txt}>Объединенное городское хозяйство</div>
 

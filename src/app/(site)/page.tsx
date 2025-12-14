@@ -1,4 +1,4 @@
-import {Banner} from "@/app/_components/Banner";
+import { Banner } from '@/app/_components/Banner'
 
 export default async function page() {
     return (
