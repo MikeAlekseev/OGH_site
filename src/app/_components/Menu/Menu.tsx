@@ -5,9 +5,7 @@ import styles from './Menu.module.scss'
 export function Menu() {
     return (
         <div className={styles.menu}>
-            Menu
-
-            <ul className={styles.menu_list}>
+                <ul className={styles.menu_list}>
                 <li><Link href="/news">Новости</Link></li>
                 <li><Link href="/improvement">Благоустройство</Link></li>
                 <li><Link href="/highway">Дороги</Link></li>

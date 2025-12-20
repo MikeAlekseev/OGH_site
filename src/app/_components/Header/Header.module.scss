@@ -1,13 +1,17 @@
 header {
-  .a{
-    text-decoration: none;
+  //margin: 20px 0;
+
+  .header__up{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 20px;
   }
 
   .logo{
     display: flex;
     align-items: center;
-    //justify-content: flex-start;
-    justify-content: space-between;
+    justify-content: flex-start;
     .logo_img {
       width: 250px;
       height: auto;

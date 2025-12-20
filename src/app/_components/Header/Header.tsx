@@ -8,7 +8,7 @@ import styles from './Header.module.scss'
 export function Header() {
     return (
         <header className={styles.module}>
-            <div >
+            <div className={styles.header__up}>
                 <Link className={styles.logo} href="/">
                 <div>
                     <img className={styles.logo_img} src="/logo.png" alt="logo" />
@@ -16,14 +16,13 @@ export function Header() {
                     <div className={styles.logo_txt}>
                         Объединенное городское хозяйство
                     </div>
-                    <div className={styles.contacts}>
-                        <div>контакный номер</div>
-                        <div>мейл</div>
-                        <div>тг</div>
-                        <div>вк</div>
-                    </div>
-
                 </Link>
+                <div className={styles.contacts}>
+                    <div>контакный номер</div>
+                    <div>мейл</div>
+                    <div>тг</div>
+                    <div>вк</div>
+                </div>
             </div>
             <Menu />
         </header>
