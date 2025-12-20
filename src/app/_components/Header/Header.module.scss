@@ -1,5 +1,11 @@
 header {
-  //margin: 20px 0;
+
+    .pcContainer{
+      max-width: 1600px;
+      height: auto;
+      margin: 0 auto;
+      //border-bottom: 1px solid black;
+    }
 
   .header__up{
     display: flex;

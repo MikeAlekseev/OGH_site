@@ -1,8 +1,16 @@
 .footer{
-  display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 20px;
+  border-top: 1px solid black;
+  .pcContainer{
+    max-width: 1600px;
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
   .logo{
     display: flex;
     align-items: center;

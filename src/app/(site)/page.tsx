@@ -1,10 +1,15 @@
 import { Banner } from '@/app/_components/Banner'
 
+import '../global.scss'
+
 export default async function page() {
     return (
-        <div>
+        <div className="main">
             <Banner />
-            Главная страница
+            <div className="pc-container">
+                Главная страница
+
+            </div>
         </div>
     )
 }
