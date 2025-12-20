@@ -13,7 +13,15 @@ export function Header() {
                 <div>
                     <img className={styles.logo_img} src="/logo.png" alt="logo" />
                 </div>
-                    <div className={styles.logo_txt}>Объединенное городское хозяйство</div>
+                    <div className={styles.logo_txt}>
+                        Объединенное городское хозяйство
+                    </div>
+                    <div className={styles.contacts}>
+                        <div>контакный номер</div>
+                        <div>мейл</div>
+                        <div>тг</div>
+                        <div>вк</div>
+                    </div>
 
                 </Link>
             </div>

@@ -1,8 +1,7 @@
-header {
-  .a{
-    text-decoration: none;
-  }
-
+.footer{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   .logo{
     display: flex;
     align-items: center;
@@ -12,14 +11,5 @@ header {
       width: 250px;
       height: auto;
     }
-    .logo_txt{
-      font-size: 30px;
-    }
   }
-  .contacts{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
 }
