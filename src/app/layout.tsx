@@ -4,8 +4,7 @@ import { Toaster } from 'sonner'
 
 import { Header } from './_components/Header'
 import { Footer } from './_components/Footer'
-
-import  '../../src/app/global.scss'
+import  './global.scss'
 
 export const metadata: Metadata = {
     title: 'ОГХ',
