@@ -28,6 +28,12 @@ export const improvementSchema = z.object(improvementFields)
 
 export type Improvement = z.infer<typeof improvementSchema>
 
+/* highway */
+
+export const highwaySchema = improvementSchema
+
+export type Highway = Improvement
+
 /* Documentation */
 
 const documentationFields = {
