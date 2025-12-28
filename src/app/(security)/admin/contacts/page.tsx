@@ -1,4 +1,7 @@
+import Link from 'next/link'
+
 import { contactRepository } from '@/repository/contactsRepository'
+import { ChevronLeftIcon } from '@/app/(security)/admin/_resources/chevronLeft'
 
 import { EditForm } from './_components/EditForm'
 
@@ -7,7 +10,14 @@ export default async function ContactsAdminPage() {
 
     return (
         <>
-            <h1 className="block__header">Редактирование контактов</h1>
+            <div className="block__header__wrapper">
+                <Link href="/admin" className="primary-icon-button">
+                    <ChevronLeftIcon />
+                </Link>
+
+                <h1>Редактирование контактов</h1>
+            </div>
+
             <EditForm initial={contacts} />
         </>
     )

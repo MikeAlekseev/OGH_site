@@ -67,7 +67,7 @@ export function EditForm({ initial }: EditFormProps) {
                 rules={{ required: 'Обязательное поле' }}
                 render={({ field }) => (
                     <MdEditor
-                        label="Контактная информация (Markdown)"
+                        label="Контактная информация"
                         value={field.value}
                         onChange={field.onChange}
                         error={errors.text?.message}

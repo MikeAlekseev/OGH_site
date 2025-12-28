@@ -8,7 +8,7 @@ export class NewsListRepository extends ListRepository<News>{
 
     async getActualData({
         filter,
-        shift,
+        shift = 0,
         limit,
     }: {
         filter?: (item: News) => boolean,
@@ -17,7 +17,10 @@ export class NewsListRepository extends ListRepository<News>{
     } = {}) {
         const newsList = await this.getData({ filter })
 
-        return newsList.reverse().slice(shift ?? 0, limit ?? newsList.length)
+        return ({
+            list: newsList.reverse().slice(shift, limit ? shift + limit : newsList.length),
+            totalCount: newsList.length,
+        })
     }
 
     async getNextId() {
