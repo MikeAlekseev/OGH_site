@@ -9,7 +9,7 @@ export default function AdminPage() {
                 <li><Link href="/admin/news" className="primary-button">Новости</Link></li>
                 <li><Link href="/admin/improvement" className="primary-button">Благоустройство</Link></li>
                 <li><Link href="/admin/highway" className="primary-button">Дороги</Link></li>
-                <li><Link href="/admin/doc" className="primary-button">Документы</Link></li>
+                <li><Link href="/admin/documentation" className="primary-button">Документация</Link></li>
                 <li><Link href="/admin/contacts" className="primary-button">Контакты</Link></li>
                 <li><Link href="/admin/vacancy" className="primary-button">Вакансии</Link></li>
             </ul>

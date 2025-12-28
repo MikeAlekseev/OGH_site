@@ -3,7 +3,7 @@ import { Highway, highwaySchema } from './types'
 
 export class HighwayListRepository extends ListRepository<Highway>{
     constructor() {
-        super('road', highwaySchema)
+        super('highway', highwaySchema)
     }
 
     async getNextId() {

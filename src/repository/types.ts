@@ -28,11 +28,18 @@ export const improvementSchema = z.object(improvementFields)
 
 export type Improvement = z.infer<typeof improvementSchema>
 
-/* highway */
+/* Highway */
 
-export const highwaySchema = improvementSchema
+const highwayFields = {
+    id: idSchema,
+    title: z.string(),
+    text: z.string(),
+    galleryImgSrc: z.array(z.string()),
+}
 
-export type Highway = Improvement
+export const highwaySchema = z.object(highwayFields)
+
+export type Highway = z.infer<typeof highwaySchema>
 
 /* Documentation */
 
@@ -50,6 +57,7 @@ export type Documentation = z.infer<typeof documentationSchema>
 
 const contactsFields = {
     text: z.string(),
+    yMap: z.string(),
 }
 
 export const contactsSchema = z.object(contactsFields)
