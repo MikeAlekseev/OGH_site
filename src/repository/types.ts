@@ -6,9 +6,9 @@ import { idSchema } from '@/utils/zod'
 
 const newsFields = {
     id: idSchema,
-    title: z.string(),
-    text: z.string(),
-    galleryImgSrc: z.array(z.string()),
+    title: z.string().max(512),
+    text: z.string().max(50000),
+    galleryImgSrc: z.array(z.string().max(512)),
 }
 
 export const newsSchema = z.object(newsFields)
@@ -19,9 +19,9 @@ export type News = z.infer<typeof newsSchema>
 
 const improvementFields = {
     id: idSchema,
-    title: z.string(),
-    text: z.string(),
-    galleryImgSrc: z.array(z.string()),
+    title: z.string().max(512),
+    text: z.string().max(50000),
+    galleryImgSrc: z.array(z.string().max(512)),
 }
 
 export const improvementSchema = z.object(improvementFields)
@@ -32,9 +32,9 @@ export type Improvement = z.infer<typeof improvementSchema>
 
 const highwayFields = {
     id: idSchema,
-    title: z.string(),
-    text: z.string(),
-    galleryImgSrc: z.array(z.string()),
+    title: z.string().max(512),
+    text: z.string().max(50000),
+    galleryImgSrc: z.array(z.string().max(512)),
 }
 
 export const highwaySchema = z.object(highwayFields)
@@ -45,8 +45,8 @@ export type Highway = z.infer<typeof highwaySchema>
 
 const documentationFields = {
     id: idSchema,
-    fileName: z.string(),
-    url: z.string(),
+    fileName: z.string().max(512),
+    url: z.string().max(512),
 }
 
 export const documentationSchema = z.object(documentationFields)
@@ -56,8 +56,8 @@ export type Documentation = z.infer<typeof documentationSchema>
 /* Contacts */
 
 const contactsFields = {
-    text: z.string(),
-    yMap: z.string(),
+    text: z.string().max(50000),
+    yMap: z.string().max(512),
 }
 
 export const contactsSchema = z.object(contactsFields)
@@ -68,12 +68,12 @@ export type Contacts = z.infer<typeof contactsSchema>
 
 const vacancyBaseFields = {
     id: idSchema,
-    title: z.string().optional(),
-    price: z.string(),
+    title: z.string().max(512),
+    price: z.string().max(512),
 }
 
 const vacancyAdditionalFields = {
-    text: z.string(),
+    text: z.string().max(50000),
 }
 
 export const vacancySchema = z.object(vacancyBaseFields)

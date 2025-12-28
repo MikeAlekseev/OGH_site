@@ -1,5 +1,4 @@
 import { PropsWithChildren } from 'react'
-import clsx from 'clsx'
 import { Metadata } from 'next'
 
 export const dynamic = 'force-dynamic'
@@ -26,7 +25,7 @@ export const metadata: Metadata = {
 
 export default function AdminLayout({ children }: PropsWithChildren) {
     return (
-        <div className={clsx('pc-container', 'with-page', 'admin-ui')}>
+        <div className="pc-container with-page">
             {children}
         </div>
     )

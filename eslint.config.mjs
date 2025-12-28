@@ -15,6 +15,10 @@ const eslintConfig = defineConfig([
   ]),
     {
         rules: {
+            '@typescript-eslint/no-unused-vars': ['error', {
+                argsIgnorePattern: '^_',
+                varsIgnorePattern: '^_'
+            }],
             '@typescript-eslint/no-empty-object-type': 'off',
             // Enforce spaces inside curly braces for objects, imports, and exports
             'object-curly-spacing': ['error', 'always'],
