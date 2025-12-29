@@ -1,12 +1,12 @@
 'use client'
 
 import Link from 'next/link'
-import { useForm } from 'react-hook-form'
+import { useForm, Controller } from 'react-hook-form'
 import { useRouter } from 'next/navigation'
 import { toast } from 'sonner'
 
 import { News } from '@/repository/types'
-import { TextInput, TextArea } from '@/app/_components/inputs'
+import { TextInput, MdEditor } from '@/app/_components/inputs'
 
 import { saveNewsAction, SaveNewsActionData } from './actions'
 
@@ -24,6 +24,7 @@ export function EditForm({ initial }: EditFormProps) {
     const isEditing = !!initial
 
     const {
+        control,
         register,
         handleSubmit,
         formState: { errors, isSubmitting },
@@ -89,11 +90,18 @@ export function EditForm({ initial }: EditFormProps) {
                 error={errors.title?.message}
             />
 
-            <TextArea
-                label="Текст"
-                rows={10}
-                {...register('text')}
-                error={errors.text?.message}
+            <Controller
+                name="text"
+                control={control}
+                render={({ field }) => (
+                    <MdEditor
+                        label="Текст"
+                        value={field.value}
+                        onChange={field.onChange}
+                        error={errors.text?.message}
+                        rows={10}
+                    />
+                )}
             />
 
             {errors.root?.message && (

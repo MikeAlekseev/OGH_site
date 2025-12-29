@@ -1,3 +1,5 @@
+import Markdown from 'react-markdown'
+
 import { newsListRepository } from '@/repository/newsListRepository'
 import { Gallery } from '@/app/_components/Gallery'
 import { Pagination } from '@/app/_components/Pagination'
@@ -32,7 +34,9 @@ export default async function NewsPage({ searchParams }: PageProps) {
                                 <h2>{item.title}</h2>
 
                                 {item.text && (
-                                    <div>{item.text}</div>
+                                    <div className="markdown-content">
+                                        <Markdown>{item.text}</Markdown>
+                                    </div>
                                 )}
 
                                 <Gallery images={item.galleryImgSrc} title={item.title} />
