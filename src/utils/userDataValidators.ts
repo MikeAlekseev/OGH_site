@@ -26,3 +26,14 @@ export function validatePhone(value: string) {
 
     return ''
 }
+
+export function validateEmail(value: string) {
+    if (typeof value !== 'string') return 'Введите email'
+    if (!value.trim()) return 'Введите email'
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+    if (!emailRegex.test(value)) return 'Введен некорректный email'
+
+    return ''
+}

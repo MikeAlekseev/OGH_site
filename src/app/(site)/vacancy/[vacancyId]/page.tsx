@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Markdown from 'react-markdown'
 
 import { vacancyFullRepository } from '@/repository/vacancyFullRepository'
+import { VacancyApplicationForm } from './VacancyApplicationForm'
 
 export default async function VacancyDetailPage(props: PageProps<'/vacancy/[vacancyId]'>) {
     const { vacancyId } = await props.params
@@ -43,6 +44,11 @@ export default async function VacancyDetailPage(props: PageProps<'/vacancy/[vaca
                         <Markdown>{vacancy.text}</Markdown>
                     </div>
                 )}
+
+                <VacancyApplicationForm
+                    vacancyTitle={vacancy.title}
+                    vacancyPrice={vacancy.price}
+                />
 
                 <p>
                     <Link href="/vacancy">Вернуться к списку вакансий</Link>
