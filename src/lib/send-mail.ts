@@ -31,7 +31,7 @@ await transporter.verify()
 
 transporter.use('compile', htmlToText())
 
-export async function sendMail(phone: string, message: string) {
+export async function sendMail(phone: string, message: string, { subject }: { subject?: string } = {}) {
     const phoneError = validatePhone(phone)
 
     if (phoneError) {
@@ -49,7 +49,7 @@ export async function sendMail(phone: string, message: string) {
     try {
         await transporter.sendMail({
             to: EMAIL_TO,
-            subject: EMAIL_SUBJECT,
+            subject: EMAIL_SUBJECT + (subject ?? 'новое сообщение'),
             text: `Телефон: ${cleanedPhone}\n\n${message || ''}`,
         })
     } catch {

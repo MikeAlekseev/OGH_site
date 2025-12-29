@@ -25,7 +25,7 @@ export const FeedbackForm = () => {
         setMessage(null)
 
         try {
-            await sendMail(data.phone, data.message)
+            await sendMail(data.phone, data.message, { subject: 'Обратная связь' })
 
             reset()
 
