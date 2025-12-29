@@ -5,7 +5,7 @@ import { z } from 'zod'
 import { readJsonFile, writeJsonFile } from '@/utils/files'
 import { DB_PATH } from '@/constants'
 
-export class ListRepository<FileListItem> {
+export class ListRepository<FileListItem extends { id: string }> {
     private fileBaseName: string
     private fileDataSchema: z.ZodType
 
@@ -70,5 +70,20 @@ export class ListRepository<FileListItem> {
         const validData = this.verifyData(data)
 
         await this.writeRawJson(validData)
+    }
+
+    async getNextId() {
+        const list = await this.getData()
+        const maxId = list.reduce((maxId, item) => {
+            const id = Number(item.id)
+
+            if (Number.isNaN(id)) {
+                return maxId
+            }
+
+            return Math.max(id, maxId)
+        }, -1)
+
+        return maxId + 1
     }
 }
