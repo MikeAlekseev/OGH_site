@@ -11,6 +11,7 @@ export interface SaveVacancyActionData {
     title: string
     price: string
     text: string
+    isArchived: boolean
 }
 
 export async function saveVacancyAction(data: SaveVacancyActionData) {
@@ -32,6 +33,7 @@ export async function saveVacancyAction(data: SaveVacancyActionData) {
         title: data.title,
         price: data.price,
         text: data.text,
+        isArchived: data.isArchived,
     }
 
     await vacancyFullRepository.setData(finalData)

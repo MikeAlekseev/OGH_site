@@ -18,6 +18,17 @@ export default async function VacancyDetailPage(props: PageProps<'/vacancy/[vaca
         )
     }
 
+    if (vacancy.isArchived) {
+        return (
+            <div className="page-content">
+                <div className="pc-container">
+                    <p>Эта вакансия перенесена в архив.</p>
+                    <Link href="/vacancy">Вернуться к списку вакансий</Link>
+                </div>
+            </div>
+        )
+    }
+
     return (
         <div className="page-content">
             <div className="pc-container">

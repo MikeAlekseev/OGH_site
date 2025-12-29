@@ -26,6 +26,7 @@ export function Grid({ list }: GridProps) {
                 <tr>
                     <th scope="col">Название</th>
                     <th scope="col">Зарплата</th>
+                    <th scope="col">Статус</th>
                     <th scope="col">Действия</th>
                 </tr>
             </thead>
@@ -44,6 +45,7 @@ export function Grid({ list }: GridProps) {
                     >
                         <td>{item.title || ''}</td>
                         <td>{item.price || ''}</td>
+                        <td>{item.isArchived ? 'В архиве' : 'Активна'}</td>
                         <td>
                             <div className="buttons-wrapper">
                                 <Link

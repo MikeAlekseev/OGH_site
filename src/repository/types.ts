@@ -70,6 +70,7 @@ const vacancyBaseFields = {
     id: idSchema,
     title: z.string().max(512),
     price: z.string().max(512),
+    isArchived: z.boolean().default(false),
 }
 
 const vacancyAdditionalFields = {

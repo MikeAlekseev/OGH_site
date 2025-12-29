@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation'
 import { toast } from 'sonner'
 
 import { VacancyFull } from '@/repository/types'
-import { TextInput, MdEditor } from '@/app/_components/inputs'
+import { Checkbox, TextInput, MdEditor } from '@/app/_components/inputs'
 
 import { saveVacancyAction, SaveVacancyActionData } from './actions'
 
@@ -14,6 +14,7 @@ type FormData = {
     title: string
     price: string
     text: string
+    isArchived: boolean
 }
 
 interface EditFormProps {
@@ -35,6 +36,7 @@ export function EditForm({ initial }: EditFormProps) {
             title: initial?.title ?? '',
             price: initial?.price ?? '',
             text: initial?.text ?? '',
+            isArchived: initial?.isArchived ?? false,
         },
     })
 
@@ -54,6 +56,7 @@ export function EditForm({ initial }: EditFormProps) {
             title: data.title,
             price: data.price,
             text: data.text,
+            isArchived: data.isArchived,
         }
 
         try {
@@ -100,6 +103,11 @@ export function EditForm({ initial }: EditFormProps) {
                         rows={10}
                     />
                 )}
+            />
+
+            <Checkbox
+                label="В архиве"
+                {...register('isArchived')}
             />
 
             {errors.root?.message && (
