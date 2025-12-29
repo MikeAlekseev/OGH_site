@@ -6,13 +6,10 @@ import { Pagination } from '@/app/_components/Pagination'
 
 const ITEMS_PER_PAGE = 50
 
-interface PageProps {
-    searchParams: Promise<{ page?: string }>
-}
-
-export default async function HighwayPage({ searchParams }: PageProps) {
-    const { page } = await searchParams
-    const currentPage = Math.max(1, parseInt(page || '1', 10) || 1)
+export default async function HighwayPage(props: PageProps<'/highway'>) {
+    const { page } = await props.searchParams
+    const pageStr = Array.isArray(page) ? page[0] : page
+    const currentPage = Math.max(1, parseInt(pageStr || '1', 10) || 1)
 
     const offset = (currentPage - 1) * ITEMS_PER_PAGE
     const { list, totalCount } = await highwayListRepository.getActualData({

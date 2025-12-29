@@ -5,12 +5,8 @@ import { ChevronLeftIcon } from '@/app/(security)/admin/_resources/chevronLeft'
 
 import { EditForm } from '../_components/EditForm'
 
-interface PageProps {
-    params: Promise<{ highwayId: string }>
-}
-
-export default async function EditHighwayPage({ params }: PageProps) {
-    const { highwayId } = await params
+export default async function EditHighwayPage(props: PageProps<'/admin/highway/[highwayId]'>) {
+    const { highwayId } = await props.params
     const list = await highwayListRepository.getData()
     const initial = list.find(item => item.id === highwayId) ?? null
 

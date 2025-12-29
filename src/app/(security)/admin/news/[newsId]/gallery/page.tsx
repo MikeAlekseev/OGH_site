@@ -10,12 +10,8 @@ import {
     reorderGalleryPhotosAction,
 } from '../../_components/actions'
 
-interface PageProps {
-    params: Promise<{ newsId: string }>
-}
-
-export default async function GalleryPage({ params }: PageProps) {
-    const { newsId } = await params
+export default async function GalleryPage(props: PageProps<'/admin/news/[newsId]/gallery'>) {
+    const { newsId } = await props.params
     const list = await newsListRepository.getData()
     const news = list.find(item => item.id === newsId)
 

@@ -10,12 +10,8 @@ import {
     reorderGalleryPhotosAction,
 } from '../../_components/actions'
 
-interface PageProps {
-    params: Promise<{ highwayId: string }>
-}
-
-export default async function GalleryPage({ params }: PageProps) {
-    const { highwayId } = await params
+export default async function GalleryPage(props: PageProps<'/admin/highway/[highwayId]/gallery'>) {
+    const { highwayId } = await props.params
     const list = await highwayListRepository.getData()
     const highway = list.find(item => item.id === highwayId)
 
