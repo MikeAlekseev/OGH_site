@@ -4,6 +4,11 @@ import { Menu } from '../Menu'
 
 import styles from './Header.module.scss'
 
+import 'bootstrap-icons/font/bootstrap-icons.css'
+
+import { FaVk } from 'react-icons/fa'
+
+
 
 export function Header() {
     return (
@@ -19,10 +24,35 @@ export function Header() {
                         </div>
                     </Link>
                     <div className={styles.contacts}>
-                        <div>контакный номер</div>
-                        <div>мейл</div>
-                        <div>тг</div>
-                        <div>вк</div>
+                        <div className={styles.contactsList}>
+                            <a  href="tel:+79011863119">
+                                <i className="bi bi-telephone"></i> Звонок
+                            </a>
+                        </div>
+                        <div className={styles.contactsList}>
+                            <a href="mailto:ogh.himki@yandex.ru">
+                                <i className="bi bi-envelope"></i> Почта
+                            </a>
+                        </div>
+                        <div className={styles.contactsList}>
+                            <a href="https://t.me/mbu_ogh">
+                                <i className="bi bi-telegram"></i> TG
+                            </a>
+                        </div>
+                        <div className={styles.contactsList}>
+                            <a href="https://vk.ru/club217665222" target="_blank" rel="noopener noreferrer">
+                                <FaVk /> ВКонтакте
+                            </a>
+                        </div>
+                        <div className={styles.contactsList}>
+                            <a
+                                href="https://max.ru/u/f9LHodD0cOLqG7Zi_4XkAUa252iLAa6hinNTjpEPd2NI8SGVw7ArSBhbPJ0"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                💬 MAX
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <Menu />
